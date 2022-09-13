@@ -3,11 +3,12 @@
     display: flex;
     background-color: #020230;
     color: white;
+    background: linear-gradient(to bottom, transparent, #020230), url("./assets/bg.jpg") center top;
 }
 
 .main {
     width: 75%;
-    background: linear-gradient(to bottom, transparent, #020230), url("./assets/bg.jpg") center top;
+
     display: flex;
     flex-direction: column;
 }
@@ -100,6 +101,27 @@
     }
 }
 
+.answer.wrong {
+    animation: wrong 3s ease forwards;
+}
+
+@keyframes wrong {
+    0%,
+    25%,
+    45% {
+        background: mediumblue;
+    }
+    20%,
+    40%,
+    60% {
+        background: linear-gradient(#0e0124, #22074d);
+    }
+    62%,
+    100% {
+        background: crimson;
+    }
+}
+
 .pyramid {
     width: 25%;
     display: flex;
@@ -119,6 +141,9 @@
     padding: 5px;
     border-radius: 5px;
 }
+.earnedText {
+    text-align: center;
+}
 
 .moneyListItem.active {
     background-color: teal;
@@ -133,4 +158,98 @@
 .moneyListItemAmount {
     font-size: 20px;
     font-weight: 300;
+}
+.lose {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.againBtn {
+    height: 50px;
+    width: 50%;
+    border-radius: 5px;
+    align-self: center;
+    background-color: greenyellow;
+    margin-top: 20px;
+    font-size: 20px;
+    color: #282536;
+}
+.Start {
+    width: 250px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.startInput {
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    background-color: #fff;
+    text-align: center;
+    font-size: 18px;
+    border: none;
+}
+
+.startBtn {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+@media (max-width: 800px) {
+    .App {
+        flex-direction: column-reverse;
+        justify-content: space-around;
+    }
+    .pyramid {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-self: center;
+        height: 30%;
+        display: none;
+    }
+    .moneyList {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .moneyListItem {
+        width: 40%;
+        justify-content: flex-start;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .main {
+        align-self: center;
+        width: 100%;
+    }
+    .timer {
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        bottom: 150px;
+    }
+    .answer {
+        width: 80%;
+        margin: 10px;
+    }
 }
